@@ -8,6 +8,10 @@ import {
 export const sampleFunction = (msg: string) => `SampleFunction Print :: ${msg}`;
 
 export class SampleThrowing {
+  @Catch(CommonException, commonExceptionHandler)
+  throwUncatchException() {
+    throw "Mock_Unknow";
+  }
   @Catch(CommonException, reThrowExceptionHandler)
   reThrowCommonException() {
     throw new CommonException("Mock_To_Rethrow");
