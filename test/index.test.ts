@@ -5,6 +5,12 @@ describe("OOP Exception", () => {
     expect(sampleFunction("Mock")).toEqual("SampleFunction Print :: Mock");
   });
 
+  test("Case unknow", () => {
+    const Mock = new SampleThrowing();
+
+    expect(() => Mock.throwUncatchException()).toThrow("Mock_Unknow");
+  });
+
   test("Case re throw", () => {
     const Mock = new SampleThrowing();
 
